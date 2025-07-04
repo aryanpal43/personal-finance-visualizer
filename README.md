@@ -1,4 +1,4 @@
-# Money Glimpse Visualizer
+# Personal Finance Visualizer
 
 A modern, interactive personal finance dashboard to track your income and expenses with beautiful visualizations. Built with React, TypeScript, Vite, shadcn-ui, and Tailwind CSS.
 
@@ -16,7 +16,7 @@ A modern, interactive personal finance dashboard to track your income and expens
 
 ## Overview
 
-**Money Glimpse Visualizer** helps you manage your personal finances by allowing you to add, edit, and delete transactions, and instantly see summaries and visual breakdowns of your financial activity. The app is designed for clarity, speed, and a delightful user experience.
+**Personal Finance Visualizer** helps you manage your personal finances by allowing you to add, edit, and delete transactions, and instantly see summaries and visual breakdowns of your financial activity. The app is designed for clarity, speed, and a delightful user experience.
 
 ---
 
