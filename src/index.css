@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personal Finance Visualizer Design System */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 220 15% 97%;
+    --foreground: 220 25% 15%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+
+    /* Popover & Dialogs */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    /* Finance Green Primary */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 142 40% 95%;
+
+    /* Trust Blue Secondary */
+    --secondary: 213 27% 84%;
+    --secondary-foreground: 220 25% 15%;
+
+    /* Neutral Tones */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Accent Blue */
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Warning & Error */
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Finance-specific colors */
+    --income: 142 76% 36%;
+    --expense: 0 84% 60%;
+    --savings: 213 94% 68%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 78%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(220 25% 15% / 0.08);
+    --shadow-medium: 0 8px 25px -5px hsl(220 25% 15% / 0.12);
+    --shadow-strong: 0 16px 50px -10px hsl(220 25% 15% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  
+  .dark {
+    /* Core Background & Text */
+    --background: 222 25% 8%;
+    --foreground: 220 15% 95%;
+
+    /* Cards & Surfaces */
+    --card: 222 25% 10%;
+    --card-foreground: 220 15% 95%;
+
+    /* Popover & Dialogs */
+    --popover: 222 25% 10%;
+    --popover-foreground: 220 15% 95%;
+
+    /* Finance Green Primary */
+    --primary: 142 76% 46%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 142 40% 15%;
+
+    /* Trust Blue Secondary */
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 220 15% 95%;
+
+    /* Neutral Tones */
+    --muted: 222 25% 12%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Accent Blue */
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Warning & Error */
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 222 25% 15%;
+    --input: 222 25% 15%; 
+    --ring: 142 76% 46%;
+
+    /* Finance-specific colors */
+    --income: 142 76% 46%;
+    --expense: 0 84% 60%;
+    --savings: 213 94% 68%;
+    
+    /* Gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 46%), hsl(142 76% 56%));
+    --gradient-card: linear-gradient(135deg, hsl(222 25% 10%), hsl(222 25% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 78%));
+  }
+}
+
+@layer components {
+  .gradient-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+  
+  .gradient-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .text-income {
+    color: hsl(var(--income));
+  }
+  
+  .text-expense {
+    color: hsl(var(--expense));
+  }
+  
+  .text-savings {
+    color: hsl(var(--savings));
+  }
+  
+  .border-soft {
+    border-color: hsl(var(--border));
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
